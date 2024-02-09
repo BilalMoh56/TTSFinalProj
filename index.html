@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Retroland</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <img src="https://i.ebayimg.com/images/g/jH8AAOSw7FRWYUws/s-l1200.webp" alt="logo" class="logo">
+                <ul>
+                    <li>
+                        <a href="#">Upcoming Release</a>
+                    </li>
+                    <li>
+                        <a href="#">Products</a>
+                    </li>
+                    <li>
+                        <a href="services.html">Services</a>
+                    </li>
+                </ul>
+                <form>
+                    <input type="text" class="search" placeholder="Search">
+                    <button class="nav-btn">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                </form>
+            </div> 
+        </nav>
+
+        <div class="body">
+            <h4>Jordan Retro 1 Chicago</h4>
+            <h1>$350.00</h1>
+            <p>The Air Jordan 1 went from a counterculture shoe to a mainstream sneaker worldwide.</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
+
+        <div class="body">
+            <img src="https://www.highsnobiety.com/static-assets/dato/1665767663-air-jordan-1-chicago-reimagined-release-date-price.jpg" alt="Chicago 1s">
+        </div>
+
+        <div class="footer">
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="watch">
+                <div class="play-icon">
+                    <i class="fas fas fa-play"></i>
+                    <a href="https://www.youtube.com/watch?v=f5QbV-wnhtY">Video</a>
+                </div>
+                <h3>Preview</h3>
+            </div>
+        </div>
+
+    </header>
+    <script>
+        
+document.addEventListener('DOMContentLoaded', function() {
+ 
+  var addButton = document.querySelector('.btn');
+  var searchInput = document.querySelector('.search');
+
+
+  addButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    alert('Item added to cart!');
+  });
+
+  
+  searchInput.addEventListener('input', function(event) {
+    var searchTerm = event.target.value.toLowerCase();
+    var products = document.querySelectorAll('.body');
+
+
+    products.forEach(function(product) {
+      var productName = product.querySelector('h4').textContent.toLowerCase();
+      if (productName.includes(searchTerm)) {
+        product.style.display = 'block';
+      } else {
+        product.style.display = 'none';
+      }
+    });
+  });
+});
+    </script>
+</body>
+</html>
